@@ -66,11 +66,11 @@ def main():
         print("Raw data. k={}, accuracy: {}".format(my_k, estimate_accuracy(cover_test_labels, out_raw)))
         out_norm = knn(dist_norm, cover_train_labels, k=my_k)
         print("Norm data. k={}, accuracy: {}".format(my_k, estimate_accuracy(cover_test_labels, out_norm)))
-    exit()
+  
+
+    # run kNN on the train data
     dist_train = distance_matrix_fast(cover_train, cover_train)
     dist_norm_train = distance_matrix_fast(cover_train_norm, cover_train_norm)
-
-    # on the train data
     print("---- Running kNN of train data ----")
     for my_k in kvalues:
         out_raw = knn(dist_train, cover_train_labels, k=my_k)
